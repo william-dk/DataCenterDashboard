@@ -1,0 +1,463 @@
+{
+  "version": "0.1",
+  "metrics": [
+    {
+      "metric_id": "revenue",
+      "unit": "USD",
+      "definition": "Reported revenue; retain issuer segment and GAAP basis.",
+      "period_types": [
+        "quarter",
+        "annual"
+      ],
+      "applicability": "all",
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    },
+    {
+      "metric_id": "ebitda",
+      "unit": "USD",
+      "definition": "EBITDA; issuer adjusted EBITDA is a separate definition requiring reconciliation.",
+      "period_types": [
+        "quarter",
+        "annual",
+        "TTM"
+      ],
+      "applicability": "all",
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    },
+    {
+      "metric_id": "ebit",
+      "unit": "USD",
+      "definition": "Operating earnings; preserve reported versus derived definition.",
+      "period_types": [
+        "quarter",
+        "annual",
+        "TTM"
+      ],
+      "applicability": "all",
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    },
+    {
+      "metric_id": "ebitda_margin",
+      "unit": "ratio",
+      "definition": "EBITDA / comparable-period revenue.",
+      "period_types": [
+        "quarter",
+        "annual",
+        "TTM"
+      ],
+      "applicability": "all",
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    },
+    {
+      "metric_id": "ebit_margin",
+      "unit": "ratio",
+      "definition": "EBIT / comparable-period revenue.",
+      "period_types": [
+        "quarter",
+        "annual",
+        "TTM"
+      ],
+      "applicability": "all",
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    },
+    {
+      "metric_id": "cfo",
+      "unit": "USD",
+      "definition": "Reported operating cash flow; quarterly/YTD handling explicit.",
+      "period_types": [
+        "quarter",
+        "YTD",
+        "annual"
+      ],
+      "applicability": "all",
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    },
+    {
+      "metric_id": "growth_capex",
+      "unit": "USD",
+      "definition": "Positive cash spend for growth; null unless disclosed or analyst-estimated.",
+      "period_types": [
+        "quarter",
+        "annual"
+      ],
+      "applicability": "all",
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    },
+    {
+      "metric_id": "maintenance_capex",
+      "unit": "USD",
+      "definition": "Positive cash spend to sustain assets; never residual without evidence.",
+      "period_types": [
+        "quarter",
+        "annual"
+      ],
+      "applicability": "all",
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    },
+    {
+      "metric_id": "total_capex",
+      "unit": "USD",
+      "definition": "Positive total cash capital expenditure; reconcile acquisitions/leases.",
+      "period_types": [
+        "quarter",
+        "YTD",
+        "annual"
+      ],
+      "applicability": "all",
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    },
+    {
+      "metric_id": "fcf_cfo",
+      "unit": "USD",
+      "definition": "CFO minus total cash CapEx; issuer-defined FCF tracked separately.",
+      "period_types": [
+        "quarter",
+        "annual",
+        "TTM"
+      ],
+      "applicability": "all",
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    },
+    {
+      "metric_id": "net_debt_ebitda",
+      "unit": "multiple",
+      "definition": "Dated net debt / comparable TTM EBITDA with debt/cash/lease convention.",
+      "period_types": [
+        "instant_with_TTM"
+      ],
+      "applicability": "all",
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    },
+    {
+      "metric_id": "roic",
+      "unit": "ratio",
+      "definition": "NOPAT / average invested capital; tax and capital adjustments explicit.",
+      "period_types": [
+        "annual",
+        "TTM"
+      ],
+      "applicability": "all",
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    },
+    {
+      "metric_id": "wacc",
+      "unit": "ratio",
+      "definition": "Analyst cost of capital assumption; evidence and scenario/version required.",
+      "period_types": [
+        "forecast_as_of"
+      ],
+      "applicability": "all",
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    },
+    {
+      "metric_id": "rate_base",
+      "unit": "USD",
+      "definition": "Eligible regulatory rate base; distinguish average vs ending and jurisdiction.",
+      "period_types": [
+        "instant",
+        "annual_average"
+      ],
+      "applicability": [
+        "E01"
+      ],
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    },
+    {
+      "metric_id": "allowed_roe",
+      "unit": "ratio",
+      "definition": "Regulator-approved equity return by jurisdiction; not earned ROE.",
+      "period_types": [
+        "effective_period"
+      ],
+      "applicability": [
+        "E01"
+      ],
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    },
+    {
+      "metric_id": "earned_roe",
+      "unit": "ratio",
+      "definition": "Actual regulatory earned return with defined equity denominator.",
+      "period_types": [
+        "annual"
+      ],
+      "applicability": [
+        "E01"
+      ],
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    },
+    {
+      "metric_id": "net_capacity_mw",
+      "unit": "MW",
+      "definition": "Net owned capacity; stage/type/region explicit, not project announcements.",
+      "period_types": [
+        "instant"
+      ],
+      "applicability": [
+        "E02",
+        "E04",
+        "E05",
+        "E08"
+      ],
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    },
+    {
+      "metric_id": "capacity_factor",
+      "unit": "ratio",
+      "definition": "MWh / (net MW × period hours); retain outages and fleet basis.",
+      "period_types": [
+        "quarter",
+        "annual"
+      ],
+      "applicability": [
+        "E02",
+        "E04",
+        "E05"
+      ],
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    },
+    {
+      "metric_id": "contracted_share",
+      "unit": "ratio",
+      "definition": "Contracted capacity or output share; specify denominator/tenor.",
+      "period_types": [
+        "instant"
+      ],
+      "applicability": [
+        "E02",
+        "E04",
+        "E05"
+      ],
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    },
+    {
+      "metric_id": "backlog",
+      "unit": "USD",
+      "definition": "Unrecognized contracted orders; distinguish funded/executable/announced.",
+      "period_types": [
+        "instant"
+      ],
+      "applicability": [
+        "E03",
+        "E06",
+        "E07"
+      ],
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    },
+    {
+      "metric_id": "book_to_bill",
+      "unit": "ratio",
+      "definition": "Bookings / revenue for same scope and period.",
+      "period_types": [
+        "quarter",
+        "annual"
+      ],
+      "applicability": [
+        "E03",
+        "E06",
+        "E07"
+      ],
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    },
+    {
+      "metric_id": "service_mix",
+      "unit": "ratio",
+      "definition": "Service revenue / comparable segment revenue.",
+      "period_types": [
+        "quarter",
+        "annual"
+      ],
+      "applicability": [
+        "E03",
+        "E08"
+      ],
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    },
+    {
+      "metric_id": "lead_time_months",
+      "unit": "months",
+      "definition": "Order-to-delivery quoted or realized lead time; specify product and date.",
+      "period_types": [
+        "instant"
+      ],
+      "applicability": [
+        "E03",
+        "E07"
+      ],
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    },
+    {
+      "metric_id": "first_power_date",
+      "unit": "date",
+      "definition": "Commercial first-power milestone; distinguish target from achieved.",
+      "period_types": [
+        "project_milestone"
+      ],
+      "applicability": [
+        "E04"
+      ],
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "date"
+    },
+    {
+      "metric_id": "cash_runway_months",
+      "unit": "months",
+      "definition": "Cash / modeled monthly burn with funding/capex assumptions; analyst estimate.",
+      "period_types": [
+        "forecast_as_of"
+      ],
+      "applicability": [
+        "E04"
+      ],
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    },
+    {
+      "metric_id": "storage_mwh",
+      "unit": "MWh",
+      "definition": "Storage energy capacity; pair with MW and stage, usable/nameplate basis.",
+      "period_types": [
+        "instant"
+      ],
+      "applicability": [
+        "E05"
+      ],
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    },
+    {
+      "metric_id": "availability",
+      "unit": "ratio",
+      "definition": "Available operating hours / scheduled hours; not capacity factor.",
+      "period_types": [
+        "quarter",
+        "annual"
+      ],
+      "applicability": [
+        "E08"
+      ],
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    },
+    {
+      "metric_id": "delivered_cost_mwh",
+      "unit": "USD/MWh",
+      "definition": "Annualized capex + O&M + fuel + charges / delivered MWh; scenario assumptions.",
+      "period_types": [
+        "forecast_as_of"
+      ],
+      "applicability": [
+        "E08"
+      ],
+      "refresh": "on_release_or_analyst_review",
+      "definition_status": "starter_requires_issuer_reconciliation",
+      "missing_policy": "null_with_reason",
+      "source_preference": "primary_disclosure",
+      "value_type": "numeric"
+    }
+  ]
+}

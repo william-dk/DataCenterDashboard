@@ -1,0 +1,370 @@
+{
+  "as_of": "2026-10-11",
+  "status": "candidate_universe_not_verified",
+  "companies": [
+    {
+      "company_id": "etn",
+      "name": "Eaton",
+      "candidate_ticker": "ETN",
+      "exchange": null,
+      "currency": null,
+      "cik": null,
+      "primary_subsector_proposed": "E07",
+      "subsector_ids_proposed": [
+        "E07"
+      ],
+      "pilot_proposed": true,
+      "identity_status": "unverified_candidate",
+      "exposure_status": "provisional_from_project_material",
+      "source_id": "dashboard-brief",
+      "segment_evidence": [],
+      "geography": null,
+      "data_availability": "not_assessed",
+      "verified_at": null
+    },
+    {
+      "company_id": "pwr",
+      "name": "Quanta Services",
+      "candidate_ticker": "PWR",
+      "exchange": null,
+      "currency": null,
+      "cik": null,
+      "primary_subsector_proposed": "E06",
+      "subsector_ids_proposed": [
+        "E06"
+      ],
+      "pilot_proposed": true,
+      "identity_status": "unverified_candidate",
+      "exposure_status": "provisional_from_project_material",
+      "source_id": "dashboard-brief",
+      "segment_evidence": [],
+      "geography": null,
+      "data_availability": "not_assessed",
+      "verified_at": null
+    },
+    {
+      "company_id": "gev",
+      "name": "GE Vernova",
+      "candidate_ticker": "GEV",
+      "exchange": null,
+      "currency": null,
+      "cik": null,
+      "primary_subsector_proposed": "E03",
+      "subsector_ids_proposed": [
+        "E03",
+        "E07"
+      ],
+      "pilot_proposed": true,
+      "identity_status": "unverified_candidate",
+      "exposure_status": "provisional_from_project_material",
+      "source_id": "dashboard-brief",
+      "segment_evidence": [],
+      "geography": null,
+      "data_availability": "not_assessed",
+      "verified_at": null
+    },
+    {
+      "company_id": "ceg",
+      "name": "Constellation Energy",
+      "candidate_ticker": "CEG",
+      "exchange": null,
+      "currency": null,
+      "cik": null,
+      "primary_subsector_proposed": "E02",
+      "subsector_ids_proposed": [
+        "E02",
+        "E04"
+      ],
+      "pilot_proposed": true,
+      "identity_status": "unverified_candidate",
+      "exposure_status": "provisional_from_project_material",
+      "source_id": "dashboard-brief",
+      "segment_evidence": [],
+      "geography": null,
+      "data_availability": "not_assessed",
+      "verified_at": null
+    },
+    {
+      "company_id": "vst",
+      "name": "Vistra",
+      "candidate_ticker": "VST",
+      "exchange": null,
+      "currency": null,
+      "cik": null,
+      "primary_subsector_proposed": "E02",
+      "subsector_ids_proposed": [
+        "E02",
+        "E04"
+      ],
+      "pilot_proposed": true,
+      "identity_status": "unverified_candidate",
+      "exposure_status": "provisional_from_project_material",
+      "source_id": "dashboard-brief",
+      "segment_evidence": [],
+      "geography": null,
+      "data_availability": "not_assessed",
+      "verified_at": null
+    },
+    {
+      "company_id": "so",
+      "name": "Southern Company",
+      "candidate_ticker": "SO",
+      "exchange": null,
+      "currency": null,
+      "cik": null,
+      "primary_subsector_proposed": "E01",
+      "subsector_ids_proposed": [
+        "E01"
+      ],
+      "pilot_proposed": true,
+      "identity_status": "unverified_candidate",
+      "exposure_status": "provisional_from_project_material",
+      "source_id": "dashboard-brief",
+      "segment_evidence": [],
+      "geography": null,
+      "data_availability": "not_assessed",
+      "verified_at": null
+    },
+    {
+      "company_id": "hubb",
+      "name": "Hubbell",
+      "candidate_ticker": "HUBB",
+      "exchange": null,
+      "currency": null,
+      "cik": null,
+      "primary_subsector_proposed": "E07",
+      "subsector_ids_proposed": [
+        "E07"
+      ],
+      "pilot_proposed": false,
+      "identity_status": "unverified_candidate",
+      "exposure_status": "provisional_from_project_material",
+      "source_id": "energy-framework",
+      "segment_evidence": [],
+      "geography": null,
+      "data_availability": "not_assessed",
+      "verified_at": null
+    },
+    {
+      "company_id": "powl",
+      "name": "Powell Industries",
+      "candidate_ticker": "POWL",
+      "exchange": null,
+      "currency": null,
+      "cik": null,
+      "primary_subsector_proposed": "E07",
+      "subsector_ids_proposed": [
+        "E07"
+      ],
+      "pilot_proposed": false,
+      "identity_status": "unverified_candidate",
+      "exposure_status": "provisional_from_project_material",
+      "source_id": "energy-framework",
+      "segment_evidence": [],
+      "geography": null,
+      "data_availability": "not_assessed",
+      "verified_at": null
+    },
+    {
+      "company_id": "mtz",
+      "name": "MasTec",
+      "candidate_ticker": "MTZ",
+      "exchange": null,
+      "currency": null,
+      "cik": null,
+      "primary_subsector_proposed": "E06",
+      "subsector_ids_proposed": [
+        "E06"
+      ],
+      "pilot_proposed": false,
+      "identity_status": "unverified_candidate",
+      "exposure_status": "provisional_from_project_material",
+      "source_id": "energy-framework",
+      "segment_evidence": [],
+      "geography": null,
+      "data_availability": "not_assessed",
+      "verified_at": null
+    },
+    {
+      "company_id": "nrg",
+      "name": "NRG Energy",
+      "candidate_ticker": "NRG",
+      "exchange": null,
+      "currency": null,
+      "cik": null,
+      "primary_subsector_proposed": "E02",
+      "subsector_ids_proposed": [
+        "E02"
+      ],
+      "pilot_proposed": false,
+      "identity_status": "unverified_candidate",
+      "exposure_status": "provisional_from_project_material",
+      "source_id": "energy-framework",
+      "segment_evidence": [],
+      "geography": null,
+      "data_availability": "not_assessed",
+      "verified_at": null
+    },
+    {
+      "company_id": "duk",
+      "name": "Duke Energy",
+      "candidate_ticker": "DUK",
+      "exchange": null,
+      "currency": null,
+      "cik": null,
+      "primary_subsector_proposed": "E01",
+      "subsector_ids_proposed": [
+        "E01"
+      ],
+      "pilot_proposed": false,
+      "identity_status": "unverified_candidate",
+      "exposure_status": "provisional_from_project_material",
+      "source_id": "energy-framework",
+      "segment_evidence": [],
+      "geography": null,
+      "data_availability": "not_assessed",
+      "verified_at": null
+    },
+    {
+      "company_id": "aep",
+      "name": "American Electric Power",
+      "candidate_ticker": "AEP",
+      "exchange": null,
+      "currency": null,
+      "cik": null,
+      "primary_subsector_proposed": "E01",
+      "subsector_ids_proposed": [
+        "E01"
+      ],
+      "pilot_proposed": false,
+      "identity_status": "unverified_candidate",
+      "exposure_status": "provisional_from_project_material",
+      "source_id": "energy-framework",
+      "segment_evidence": [],
+      "geography": null,
+      "data_availability": "not_assessed",
+      "verified_at": null
+    },
+    {
+      "company_id": "cat",
+      "name": "Caterpillar",
+      "candidate_ticker": "CAT",
+      "exchange": null,
+      "currency": null,
+      "cik": null,
+      "primary_subsector_proposed": "E08",
+      "subsector_ids_proposed": [
+        "E08"
+      ],
+      "pilot_proposed": false,
+      "identity_status": "unverified_candidate",
+      "exposure_status": "provisional_from_project_material",
+      "source_id": "energy-framework",
+      "segment_evidence": [],
+      "geography": null,
+      "data_availability": "not_assessed",
+      "verified_at": null
+    },
+    {
+      "company_id": "cmi",
+      "name": "Cummins",
+      "candidate_ticker": "CMI",
+      "exchange": null,
+      "currency": null,
+      "cik": null,
+      "primary_subsector_proposed": "E08",
+      "subsector_ids_proposed": [
+        "E08"
+      ],
+      "pilot_proposed": false,
+      "identity_status": "unverified_candidate",
+      "exposure_status": "provisional_from_project_material",
+      "source_id": "energy-framework",
+      "segment_evidence": [],
+      "geography": null,
+      "data_availability": "not_assessed",
+      "verified_at": null
+    },
+    {
+      "company_id": "be",
+      "name": "Bloom Energy",
+      "candidate_ticker": "BE",
+      "exchange": null,
+      "currency": null,
+      "cik": null,
+      "primary_subsector_proposed": "E08",
+      "subsector_ids_proposed": [
+        "E08"
+      ],
+      "pilot_proposed": false,
+      "identity_status": "unverified_candidate",
+      "exposure_status": "provisional_from_project_material",
+      "source_id": "energy-framework",
+      "segment_evidence": [],
+      "geography": null,
+      "data_availability": "not_assessed",
+      "verified_at": null
+    },
+    {
+      "company_id": "bwxt",
+      "name": "BWX Technologies",
+      "candidate_ticker": "BWXT",
+      "exchange": null,
+      "currency": null,
+      "cik": null,
+      "primary_subsector_proposed": "E04",
+      "subsector_ids_proposed": [
+        "E04"
+      ],
+      "pilot_proposed": false,
+      "identity_status": "unverified_candidate",
+      "exposure_status": "provisional_from_project_material",
+      "source_id": "energy-framework",
+      "segment_evidence": [],
+      "geography": null,
+      "data_availability": "not_assessed",
+      "verified_at": null
+    },
+    {
+      "company_id": "nee",
+      "name": "NextEra Energy",
+      "candidate_ticker": "NEE",
+      "exchange": null,
+      "currency": null,
+      "cik": null,
+      "primary_subsector_proposed": "E01",
+      "subsector_ids_proposed": [
+        "E01",
+        "E05"
+      ],
+      "pilot_proposed": false,
+      "identity_status": "unverified_candidate",
+      "exposure_status": "provisional_from_project_material",
+      "source_id": "energy-framework",
+      "segment_evidence": [],
+      "geography": null,
+      "data_availability": "not_assessed",
+      "verified_at": null
+    },
+    {
+      "company_id": "flnc",
+      "name": "Fluence Energy",
+      "candidate_ticker": "FLNC",
+      "exchange": null,
+      "currency": null,
+      "cik": null,
+      "primary_subsector_proposed": "E05",
+      "subsector_ids_proposed": [
+        "E05"
+      ],
+      "pilot_proposed": false,
+      "identity_status": "unverified_candidate",
+      "exposure_status": "provisional_from_project_material",
+      "source_id": "energy-framework",
+      "segment_evidence": [],
+      "geography": null,
+      "data_availability": "not_assessed",
+      "verified_at": null
+    }
+  ]
+}

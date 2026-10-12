@@ -1,0 +1,147 @@
+{
+  "version": "0.1",
+  "layers": [
+    {
+      "id": "L01",
+      "name": "Energy & Grid"
+    },
+    {
+      "id": "L02",
+      "name": "Data Center Facilities"
+    },
+    {
+      "id": "L03",
+      "name": "Compute & Semiconductors"
+    },
+    {
+      "id": "L04",
+      "name": "Networking & Optical Infrastructure"
+    },
+    {
+      "id": "L05",
+      "name": "Storage"
+    },
+    {
+      "id": "L06",
+      "name": "Cloud & Orchestration"
+    },
+    {
+      "id": "L07",
+      "name": "Data Infrastructure"
+    }
+  ],
+  "energy_subsectors": [
+    {
+      "id": "E01",
+      "layer_id": "L01",
+      "name": "Regulated Utilities",
+      "economics": "CapEx → eligible rate base → earned return → earnings; funding and dilution determine per-share returns.",
+      "metric_ids": [
+        "rate_base",
+        "allowed_roe",
+        "earned_roe",
+        "growth_capex"
+      ],
+      "valuation": "Regulatory DCF / rate-base economics; P/E cross-check",
+      "status": "framework_seed"
+    },
+    {
+      "id": "E02",
+      "layer_id": "L01",
+      "name": "IPPs & Merchant Generation",
+      "economics": "Net MW × hours × capacity factor × realized spread; separate contracted energy, merchant energy and capacity revenues.",
+      "metric_ids": [
+        "net_capacity_mw",
+        "capacity_factor",
+        "contracted_share",
+        "maintenance_capex"
+      ],
+      "valuation": "Plant/contract DCF; normalized EV/EBITDA and FCF",
+      "status": "framework_seed"
+    },
+    {
+      "id": "E03",
+      "layer_id": "L01",
+      "name": "Natural Gas Generation & Turbine Equipment",
+      "economics": "Separate plant ownership from turbine manufacturing; orders → backlog → deliveries → service; cash depends on execution and working capital.",
+      "metric_ids": [
+        "backlog",
+        "book_to_bill",
+        "service_mix",
+        "lead_time_months"
+      ],
+      "valuation": "Equipment earnings/DCF versus generation cash flow",
+      "status": "framework_seed"
+    },
+    {
+      "id": "E04",
+      "layer_id": "L01",
+      "name": "Nuclear Power & SMRs",
+      "economics": "Separate operating nuclear, component suppliers and pre-revenue developers; availability and contract economics differ from licensing/financing options.",
+      "metric_ids": [
+        "capacity_factor",
+        "contracted_share",
+        "first_power_date",
+        "cash_runway_months"
+      ],
+      "valuation": "Operating DCF; supplier earnings; probability-weighted development NAV",
+      "status": "framework_seed"
+    },
+    {
+      "id": "E05",
+      "layer_id": "L01",
+      "name": "Renewable Energy & Battery Storage",
+      "economics": "Separate developers/asset owners from manufacturers; generation profile/PPA and storage duration/spreads drive economics.",
+      "metric_ids": [
+        "net_capacity_mw",
+        "storage_mwh",
+        "capacity_factor",
+        "contracted_share"
+      ],
+      "valuation": "Project NAV/DCF/IRR or supplier earnings",
+      "status": "framework_seed"
+    },
+    {
+      "id": "E06",
+      "layer_id": "L01",
+      "name": "Grid Infrastructure, Transmission & EPC",
+      "economics": "Funded/executable backlog conversion × margin; labor, project execution and working capital determine cash conversion.",
+      "metric_ids": [
+        "backlog",
+        "book_to_bill",
+        "ebitda_margin",
+        "fcf_cfo"
+      ],
+      "valuation": "Earnings multiples and cycle-aware FCF DCF",
+      "status": "framework_seed"
+    },
+    {
+      "id": "E07",
+      "layer_id": "L01",
+      "name": "Electrical Equipment, Transformers & Switchgear",
+      "economics": "Shipments × price + service; backlog conversion, price/cost and capacity additions determine margin durability.",
+      "metric_ids": [
+        "backlog",
+        "book_to_bill",
+        "lead_time_months",
+        "ebit_margin"
+      ],
+      "valuation": "EV/EBIT or EBITDA, ROIC/FCF DCF",
+      "status": "framework_seed"
+    },
+    {
+      "id": "E08",
+      "layer_id": "L01",
+      "name": "Behind-the-Meter, Distributed Generation & Microgrids",
+      "economics": "Separate equipment sale/service from owned power-as-a-service; lifecycle fuel/capex, reliability and time-to-power matter.",
+      "metric_ids": [
+        "net_capacity_mw",
+        "availability",
+        "delivered_cost_mwh",
+        "service_mix"
+      ],
+      "valuation": "Equipment comps or project cash-flow DCF",
+      "status": "framework_seed"
+    }
+  ]
+}
