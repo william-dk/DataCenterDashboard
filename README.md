@@ -13,7 +13,7 @@ A runnable dashboard and live data ingestion have not yet been implemented.
 
 - `config/` — taxonomy, candidate companies, and KPI definitions
 - `dashboard/` — dashboard schema and application code
-- `docs/` — dashboard specification and data contract
+- `docs/` — dashboard specification, data contract, and [research workflow operating system](docs/RESEARCH_WORKFLOW_OS.md)
 
 ## Data and secrets
 
