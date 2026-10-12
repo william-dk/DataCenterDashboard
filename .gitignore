@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Secrets
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Local and licensed data
+data/
+raw/
+cache/
+*.duckdb
+*.duckdb.wal
+
+# Editor and operating system
+.vscode/
+.DS_Store
+Thumbs.db
