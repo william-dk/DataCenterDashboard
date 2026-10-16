@@ -1,0 +1,100 @@
+{
+  "fixture_id": "pwr-mvp-2026-10-12",
+  "as_of": "2026-10-12",
+  "status": "illustrative_pending_primary_source_review",
+  "purpose": "Validate the minimum research object model before implementing ingestion or UI.",
+  "taxonomy": {
+    "layer_id": "L01",
+    "subsector_id": "E06",
+    "layer_status": "from_project_taxonomy",
+    "subsector_status": "from_project_taxonomy"
+  },
+  "company": {
+    "company_id": "pwr",
+    "name": "Quanta Services",
+    "identity_status": "candidate_pending_primary_source_verification",
+    "source_id": "pwr-identity-source-pending"
+  },
+  "security": {
+    "security_id": "pwr-common",
+    "ticker": "PWR",
+    "exchange": null,
+    "currency": null,
+    "status": "pending_verification",
+    "missing_reason": "Confirm listing, currency and valid dates from an approved primary or exchange source."
+  },
+  "segment": {
+    "segment_id": "pwr-segment-pending",
+    "company_id": "pwr",
+    "name": null,
+    "status": "pending_verification",
+    "missing_reason": "Confirm issuer-reported segment name and scope before mapping revenue or KPIs."
+  },
+  "exposure": {
+    "company_id": "pwr",
+    "segment_id": "pwr-segment-pending",
+    "layer_id": "L01",
+    "subsector_id": "E06",
+    "exposure_type": "provisional",
+    "economic_role": "Grid infrastructure, transmission and EPC exposure is a research hypothesis pending segment evidence.",
+    "evidence_source_id": "pwr-identity-source-pending",
+    "status": "review_required"
+  },
+  "sources": [
+    {
+      "source_id": "pwr-identity-source-pending",
+      "title": "PWR issuer filing / investor-relations source to be selected",
+      "url": null,
+      "source_type": "primary_company_source",
+      "published_at": null,
+      "retrieved_at": null,
+      "status": "pending"
+    }
+  ],
+  "observations": [
+    {
+      "observation_id": "pwr-revenue-fy-pending",
+      "company_id": "pwr",
+      "segment_id": "pwr-segment-pending",
+      "metric_id": "revenue",
+      "value": null,
+      "unit": "USD",
+      "period": null,
+      "source_id": "pwr-identity-source-pending",
+      "status": "pending_primary_source_extraction",
+      "missing_reason": "Populate only after issuer filing context, period and locator are verified."
+    },
+    {
+      "observation_id": "pwr-backlog-pending",
+      "company_id": "pwr",
+      "segment_id": "pwr-segment-pending",
+      "metric_id": "backlog",
+      "value": null,
+      "unit": "USD",
+      "period": null,
+      "source_id": "pwr-identity-source-pending",
+      "status": "pending_unstructured_review",
+      "missing_reason": "Backlog definition, scope and disclosure locator require analyst review."
+    }
+  ],
+  "research_queue": [
+    {
+      "item_id": "pwr-exposure-review",
+      "item_type": "claim",
+      "company_id": "pwr",
+      "summary": "Confirm which PWR segment captures data-center-related grid and EPC economics.",
+      "source_id": "pwr-identity-source-pending",
+      "status": "proposed",
+      "owner": "analyst"
+    },
+    {
+      "item_id": "pwr-backlog-definition-review",
+      "item_type": "kpi_candidate",
+      "company_id": "pwr",
+      "summary": "Confirm backlog definition, period, conversion language and relationship to revenue forecast.",
+      "source_id": "pwr-identity-source-pending",
+      "status": "proposed",
+      "owner": "analyst"
+    }
+  ]
+}
