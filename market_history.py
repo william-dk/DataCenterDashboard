@@ -1,6 +1,7 @@
 """Historical price retrieval and fixed-cohort value-chain indices."""
 from datetime import datetime, timezone
-from functools import lru_cache
+from threading import Lock, local
+from time import monotonic, sleep
 
 import numpy as np
 import pandas as pd
@@ -10,15 +11,33 @@ from local_store import remembered
 
 
 class BoundedYahooSession(Session):
-    """Keep individual provider requests bounded during first-page loading."""
+    """Use per-thread sessions and space Yahoo requests to reduce 429s."""
     def request(self, method, url, **kwargs):
-        kwargs['timeout'] = 12
+        global _last_yahoo_request
+        kwargs.setdefault('timeout', 20)
+        # Yahoo throttles bursty requests, especially from shared cloud IPs.
+        # Space request starts across all worker threads in this process.
+        with _yahoo_request_lock:
+            delay = _YAHOO_MIN_INTERVAL - (monotonic() - _last_yahoo_request)
+            if delay > 0:
+                sleep(delay)
+            _last_yahoo_request = monotonic()
         return super().request(method, url, **kwargs)
 
 
-@lru_cache(maxsize=1)
+_yahoo_request_lock = Lock()
+_last_yahoo_request = 0.0
+_yahoo_thread_state = local()
+_YAHOO_MIN_INTERVAL = 1.25
+
+
 def yahoo_session():
-    return BoundedYahooSession(impersonate='chrome')
+    # curl_cffi sessions are not shared between concurrent Streamlit workers.
+    session = getattr(_yahoo_thread_state, 'session', None)
+    if session is None:
+        session = BoundedYahooSession(impersonate='chrome')
+        _yahoo_thread_state.session = session
+    return session
 
 
 def fetch_prices(ticker, previous=None, previous_source=None):

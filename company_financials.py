@@ -23,6 +23,16 @@ def positive(value):
     return value if value is not None and value > 0 else None
 
 
+def retrieval_error(exc, data_kind):
+    """Return a short actionable provider error without hiding its root message."""
+    detail = ' '.join(str(exc).split())[:180]
+    if type(exc).__name__ == 'YFRateLimitError' or '429' in detail:
+        return f'{data_kind}: Yahoo Finance rate limited this request (HTTP 429). Wait a few minutes before retrying; saved data is retained.'
+    if detail:
+        return f'{data_kind}: {type(exc).__name__}: {detail}'
+    return f'{data_kind}: {type(exc).__name__}; saved data is retained.'
+
+
 def fetch_company(ticker, previous=None):
     import yfinance as yf
 
@@ -138,7 +148,7 @@ def retrieve_member(ticker):
             result['financials']['Status'] += '; previous annual snapshot retained with its original period'
         save_snapshot('financials', ticker, result['financials'])
     except Exception as exc:
-        result['financial_error'] = f'Retrieval failed ({type(exc).__name__}); use refresh to retry.'
+        result['financial_error'] = retrieval_error(exc, 'Financial data unavailable')
     try:
         prior = restore_members([ticker])
         result['prices'], result['price_source'] = fetch_prices(ticker,
@@ -146,7 +156,7 @@ def retrieve_member(ticker):
         save_snapshot('prices', ticker, {'data': json.loads(result['prices'].reset_index().to_json(orient='split', date_format='iso')),
                                         'source': result['price_source']})
     except Exception as exc:
-        result['price_error'] = f'History retrieval failed ({type(exc).__name__}); use refresh to retry.'
+        result['price_error'] = retrieval_error(exc, 'Price history unavailable')
     save_snapshot('company_attempts', ticker, {key: value for key, value in result.items() if key.endswith('_error')}
                   | {'attempted_at': datetime.now(timezone.utc).isoformat()})
     return result
@@ -179,7 +189,9 @@ def load_members(tickers, previous=None):
     snapshot = previous if previous is not None else restore_members(tickers)
     tickers = sorted(set(tickers))
     # Workers persist each successful component immediately, even before polling.
-    pool = ThreadPoolExecutor(max_workers=3)
+    # Yahoo's shared-cloud-IP limits are easily exceeded by simultaneous first-load
+    # requests; individual HTTP calls are additionally spaced in market_history.
+    pool = ThreadPoolExecutor(max_workers=1)
     st.session_state['market_jobs'] = {ticker: pool.submit(retrieve_member, ticker) for ticker in tickers}
     st.session_state['market_pool'] = pool
     st.session_state['market_job_total'] = len(tickers)

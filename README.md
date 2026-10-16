@@ -72,6 +72,9 @@ Yahoo Finance snapshots are fetched through yfinance without another API key.
 Details include quote/retrieval timestamps, fiscal year end, sources and CSV export.
 Quotes may be delayed; annual financials update on reporting, not intraday.
 Secondary-source figures await primary-filing reconciliation.
+Yahoo requests are serialized and spaced to reduce rate limits from shared cloud
+IP addresses. If Yahoo returns HTTP 429, wait several minutes before retrying;
+the app retains successful saved data and displays a short provider error detail.
 
 The panel shows price, market cap, EV, trailing P/E, annual revenue/EBITDA,
 CFO, cash CapEx, calculated FCF, FCF margin and FCF yield. FY EV/EBITDA

@@ -9,7 +9,7 @@ from streamlit.testing.v1 import AppTest
 import local_store as store
 import company_financials as c
 import electricity as e
-from market_history import fetch_prices
+from market_history import fetch_prices, yahoo_session
 
 
 def financial_row(ticker='SO'):
@@ -22,6 +22,19 @@ def financial_row(ticker='SO'):
 
 
 class RestoreTests(unittest.TestCase):
+    def test_yahoo_sessions_are_not_shared_between_threads(self):
+        from concurrent.futures import ThreadPoolExecutor
+        main_session = yahoo_session()
+        with ThreadPoolExecutor(max_workers=1) as pool:
+            worker_session = pool.submit(yahoo_session).result()
+        self.assertIsNot(main_session, worker_session)
+
+    def test_rate_limit_message_is_actionable_and_typeerror_keeps_detail(self):
+        rate_error = c.retrieval_error(type('YFRateLimitError', (Exception,), {})('Too Many Requests'), 'Financial data unavailable')
+        type_error = c.retrieval_error(TypeError("unexpected 'foo' argument"), 'Financial data unavailable')
+        self.assertIn('Wait a few minutes', rate_error)
+        self.assertIn("unexpected 'foo' argument", type_error)
+
     def test_partial_company_download_persists_and_failed_update_keeps_it(self):
         with tempfile.TemporaryDirectory() as folder, patch.object(store, 'STORE', Path(folder)), patch.object(c, 'fetch_company', return_value=financial_row()), patch.object(c, 'fetch_prices', side_effect=ValueError('offline')):
             member = c.retrieve_member('SO')
